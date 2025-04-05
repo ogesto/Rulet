@@ -1,8 +1,6 @@
 import random
 import time
-import numbers
 
-ntime = None
 lista =[]
 
 Black = None
@@ -10,7 +8,7 @@ Read = None
 Green = None
 
 #moc
-b = int(input('Podaj moc --->' ))
+b = int(input('Podaj siłę zakręcenia --->' ))
 a = random.randint(1,36)
 c = b * a
 moc = c // 2
@@ -67,8 +65,7 @@ elif user_input != r:
     print('Nie wygrałeś')
 
 
-
-print('moc ---> ',moc)
 print('liczba to ---> ',r)
 print('Twoja liczba to ---> ',user_input)
+print('moc ---> ',moc)
 print('Wszystkie liczby to ---> ',*lista)
