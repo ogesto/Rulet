@@ -62,7 +62,7 @@ else:
 for i in range(moc):
     
     los = random.randrange(0,36)
-    time.sleep(0)
+    time.sleep(0.25)
     if los <= 9:
 
         if los <10:
