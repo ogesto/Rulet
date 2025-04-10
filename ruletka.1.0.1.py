@@ -18,10 +18,11 @@ listablack = [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,]
 listared = [2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36]
 listagreen = [0]
 loslista = []
+user_lista = []
 
 
 #moc calculator
-a = int(input('Podaj moc zakręcenia ---> '))
+a = int(input('Enter the power of the spin ---> '))
 b = random.randrange(1,36)
 c = a * b
 d = c // 2
@@ -32,31 +33,36 @@ moc = d // 2
 
 
 #user imput number or color 
-user_imput = input('Wpis "L" aby wybrać liczbę albo wpisz "C" aby wbrać kolor --->')
-
+user_imput = input('The entry "N" to select a number or enter "C" to enter a color --->')
+user_lista.append(user_imput)
 
 
 #color imput from user
-if user_imput == "L" or "l" and user_imput != "C" or "c" :
-        user_imput = int(input('Podaj liczbę od 0 d 36 --->'))
-else:
-    if user_imput == "C" or "c" and user_imput != "L" or "l":
+if "N" in user_lista or "n" in user_lista:
+        user_imput = int(input('Enter a number from 0 to 36 --->'))
+        
+
+if "C" in user_lista or "c" in user_lista:
+    color = True
+    user_imput = input('||Black==B||Red==R||Green==G|| --->')
+    
+
+    if user_imput == "B" or user_imput == "b":
+        Black = True
+        color = True        
+
+    elif user_imput == "R" or "r":
+        Red = True
         color = True
-        user_imput = input('||Black==B||Red==R||Green==G|| --->')
-        if user_imput == "B" or "b":
-            Black = True
-            color = True
 
-        elif user_imput == "R" or "r":
-            Red = True
-            color = True
+    elif user_imput == "G" or "g":
+        Green = True
+        color = True
 
-        elif user_imput == "G" or "g":
-            Green = True
-            color = True
-    else:
-        color = False
-        print('color === False')
+else:
+    color = False
+    print('color === False')    
+
 
 #losowanie liczb
 for i in range(moc):
@@ -79,10 +85,10 @@ for i in range(moc):
 if user_imput in lista1:
 
     if user_imput == los:
-        print('Wygrałeś')
+        print('You won')
 
     elif user_imput != los:
-        print('Nie wygrałeś')
+        print("You didn't win")
 
     
 n = los % 2
@@ -116,7 +122,7 @@ if color == True and win != True:
     elif n != 0:
         print('Color --- Black = you lost')
 
-if color == True or color != True and win != True:
+if (color == True or color != True) and win != True:
     if los == 0:
         print('Color --- Green')            
 
